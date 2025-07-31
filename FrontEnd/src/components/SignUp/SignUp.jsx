@@ -1,0 +1,35 @@
+import React from 'react';
+import { Link,Redirect} from 'react-router-dom';
+
+import Form from 'components/Form';
+import logoImg from 'assets/logo-white.png'
+function SignUp({ user, setUser }) {
+  if (user.email) return <Redirect to='/dashboard' />;
+
+  return (
+    <div className='flex justify-center items-center w-full h-screen bg-gray-200'>
+      <div
+        className='m-4 w-full sm:w-2/3 rounded-md shadow-lg	flex justify-center items-center flex-col bg-white p-8 sm:p-12'
+        style={{ maxWidth: 450 }}
+      >
+        <Link to='/'>
+          <img
+            className='h-16 mb-4'
+            src={logoImg}
+            alt='SmartSummary'
+          />
+        </Link>
+        <Form formType='signup' formButton='Create Account' setUser={setUser} /> 
+        
+        <p className='text-sm block text-gray-600 mt-2 text-left'>
+          Already have an Account?{' '}
+          <Link className='text-blue-600' to='/login'>
+            Login Now!
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default SignUp;
