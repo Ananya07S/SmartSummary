@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartSummary - Edit your Meeting Text</title>
+    <link rel="stylesheet" href="textEditor.css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      /* Audio Player Button Styles */
+      .audio-upload-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      
+      #playAudioButton, #transcribeButton {
+        background-color: #0E67CF;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.3s ease;
+        white-space: nowrap;
+      }
+      
+      #playAudioButton:hover, #transcribeButton:hover {
+        background-color: #0E67CF;
+      }
+      
+      #playAudioButton:disabled, #transcribeButton:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      
+      #playAudioButton svg, #transcribeButton svg {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="./logo-white.png" alt="Logo White" />
+    </div>
+    <div class="content">
+      <div>
+        <h1>Meeting Conversation's Text</h1>
+        <textarea
+          id="meetingText"
+          placeholder="(Meeting text will appear here)"
+        ></textarea>
+      </div>
+      <form id="submit-meeting-details" class="right-content" >
+        <p>
+          Meeting's Agenda:&nbsp;
+          <input
+            id="title"
+            type="text"
+            name="agenda"
+            placeholder="Please enter the agenda of the meeting"
+            required
+          />
+        </p>
+        
+        <div class="upload-section">
+          <label for="audioFile">Upload an audio file:</label>
+          <input type="file" id="audioFile" accept="audio/*">
+          <div class="audio-upload-container">
+            <button type="button" id="transcribeButton" onclick="uploadAudio()">
+              <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                <path d="M16 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 12c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                <path d="M12 5.99l9 9c0-4.42-3.58-8-8-8s-8 3.58-8 8l9-9zm0 0V3l-9 9c0 4.42 3.58 8 8 8s8-3.58 8-8l-9-9v2.99z"/>
+              </svg>-->
+              Upload & Transcribe
+            </button>
+            <button type="button" id="playAudioButton" disabled>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Play Audio
+            </button>
+          </div>
+          <div id="uploadStatus"></div>
+          <audio id="audioPlayer" style="display: none;"></audio>
+        </div>
+    
+        <button type="submit" id="summarizeButton">
+          Generate Notes for the Meeting
+        </button>
+        <p id="summaryResult"></p>
+      </form>
+    </div>
+    <div class="message" style="display: none;">
+      <lottie-player
+        src="https://assets4.lottiefiles.com/packages/lf20_pmYw5P.json"
+        background="transparent"
+        speed="0.5"
+        style="width: 250px; height: 250px"
+        autoplay
+      ></lottie-player>
+      <h1>Hey there, Thanks for using SmartSummary &#128516;</h1>
+      <p style="line-height: 1.5">
+        We've received your meeting's text.Please wait for a minute then, head over to your <a href = http://localhost:5000/dashboard>Dashboard</a> to view your meeting notes!
+        
+        <br />
+        Till then, Happy Meetings :)
+      </p>
+    </div>
+    <script src="textEditor.js"></script>
+  </body>
+</html>
