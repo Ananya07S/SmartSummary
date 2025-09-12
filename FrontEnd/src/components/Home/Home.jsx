@@ -1,151 +1,194 @@
 import React from "react";
-import Lottie from "react-lottie";
-
 import Navbar from "components/Navbar";
 import Icon from "components/Icon";
 import Footer from "components/Footer";
 
-import animationData from "assets/lotties/chat.json";
-import animationData1 from "assets/lotties/bubble.json";
-
-import bloggerImg from "assets/blogger.png";
-import notionImg from "assets/Notion.png";
-// import heroBottomImg from "assets/hero_bottom.png";
-import businessmenImg from "assets/businessmen.png";
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
-
-const anim2 = {
-  loop: true,
-  autoplay: true,
-  animationData: animationData1,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
+// Minimal Integration Card
+const IntegrationCard = ({ icon, name, description }) => (
+  <div className="flex-shrink-0 bg-white rounded-lg border border-gray-200 p-6 w-72 hover:bg-gray-50 transition">
+    <div className="text-3xl mb-3">{icon}</div>
+    <h3 className="text-lg font-semibold text-gray-900 mb-1">{name}</h3>
+    <p className="text-sm text-gray-600">{description}</p>
+  </div>
+);
 
 function Home({ user, setUser }) {
   return (
     <>
-      <div
-        style={{ backgroundColor: "rgb(19, 9, 55)" }}
-        className="md:h-screen"
+      {/* Import Inter Font */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+
+      {/* Hero Section */}
+      <div 
+        className="relative min-h-screen flex flex-col items-center justify-center font-inter"
+        style={{
+          background: "white",
+          backgroundImage: `
+            linear-gradient(to right, rgba(71,85,105,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(71,85,105,0.1) 1px, transparent 1px),
+           radial-gradient(circle at 50% 50%, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0.1) 40%, transparent 80%)
+          `,
+          backgroundSize: "58px 58px, 58px 58px, 100% 100%",
+        }}
       >
         <Navbar user={user} setUser={setUser} />
-        <div className="h-full flex flex-col items-center md:flex-row p-6 sm:p-12">
-          <div className="w-full md:w-1/2">
-            <h2 className="pt-6 text-left text-4xl md:text-6xl text-white font-bold">
-              SmartSummary
-            </h2>
-            <h4 className="mb-4 pb-4 pt-2 text-left text-2xl md:text-3xl text-white font-bold">
-              Turn Conversations into Actions
-            </h4>
-            <p className="text-xl font-medium text-white">
-              SmartSummary is your easy to use online meeting assistant that
-              backs you up with automated meeting minutes in every conversation.
-              It will help you save time on board meetings, team management, and
-              customer support such that you just focus on the conversation and
-              never miss what’s important.
-            </p>
-            <a
-              className="transition duration-500 ease-in-out text-lg font-bold rounded shadow hover:shadow-lg inline-flex mt-5 text-white py-3 px-4 items-center bg-blue-600 hover:bg-blue-700"
-              href="/landing.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Icon name="download" />
-              &nbsp;Download Chrome Extension
-            </a>
-          </div>
-          <div
-            style={{ backgroundColor: "rgb(19, 9,55)", height: "530px" }}
-            className=" w-full md:w-1/2 md:p-12"
-          >
-            <Lottie options={defaultOptions} />
-          </div>
-        </div>
-      </div>
-      <div className="bg-gray-200 p-8 sm:p-16">
-        <h1 className="mb-8 text-center text-3xl sm:text-4xl text-gray-700 font-bold">
-          How SmartSummary helps you?
-        </h1>
-        <div className="flex flex-col sm:flex-row">
-          <div className="mb-6 mx-2 sm:mx-4 md:mx-6">
-            <img className="m-auto h-32" src={bloggerImg} alt="record" />
-            <h4 className="my-2 pb-4 pt-2 text-center text-2xl text-gray-700 font-bold">
-              Stay focused and productive
-            </h4>
-            <p className="text-xl text-gray-800 sm:text-justify">
-              Helps you save time on board meetings, team management, and
-              customer support such that you just focus on the conversation and
-              never miss what’s important.
-            </p>
-          </div>
-          <div className="mb-6 mx-2 sm:mx-4 md:mx-6">
-            <img className="m-auto h-32" src={businessmenImg} alt="record" />
-            <h4 className="my-2 pb-4 pt-2 text-center text-2xl text-gray-700 font-bold">
-              Sharable smart meeting notes
-            </h4>
-            <p className="text-xl text-gray-800 sm:text-justify">
-              What’s more special is - using our unique machine learning
-              algorithms, and extract essential insights and turn them into a
-              comprehensive, collaborative meeting summary.
-            </p>
-          </div>
-          <div className="mb-6 mx-2 sm:mx-4 md:mx-6">
-            <img className="m-auto h-32" src={notionImg} alt="record" />
-            <h4 className="my-2 pb-4 pt-2 text-center text-2xl text-gray-700 font-bold">
-              Directly save to Notion
-            </h4>
-            <p className="text-xl text-gray-800 sm:text-justify">
-              Packed with a Notion integrations to further ease your work life.
-              Use with anything and everything - Google meet, Zoom, Blue Jeans,
-              GoToMeeting, Microsoft Teams, and many more.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div
-        style={{ backgroundColor: "rgb(19, 9, 55)" }}
-        className="flex flex-col sm:flex-row items-center p-10 sm:p-16"
-      >
-        <div className="w-full sm:w-1/2 m-4">
-          <Lottie options={anim2} height={280} width={280} />
-        </div>
-        <div className="w-full sm:w-1/2 m-4">
-          <h2 className=" pt-6 text-left text-3xl sm:text-4xl text-white font-bold">
-            What SmartSummary offers you?
-          </h2>
-          <h4 className="mb-4 pb-4 pt-2 text-left text-2xl text-white font-bold">
-            Make the most out of every conversation!
+
+        <div className="max-w-60xl text-center mt-16">
+         <h1
+  className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900"
+  style={{ fontFamily: "'Indie Flower', cursive" }}
+>
+  SmartSummary
+</h1>
+
+
+          <h4 className="italic mt-6 text-xl text-gray-700">
+            "Turn Conversations into Actions"
           </h4>
-          <ul className="list-disc">
-            <li className="pb-2 list-inside text-xl text-white">
-              Transcribe interviews, podcasts, and Team meetings.
-            </li>
-            <li className="pb-2 list-inside text-xl text-white">
-              Empower team collaboration with easy sharing and search across all
-              your conversations.
-            </li>
-            <li className="pb-2 list-inside text-xl text-white">
-              Get AI-generated notes for key topics, capture important notes
-              using Transcript highlights, and save these notes automatically to
-              your dashboard.
-            </li>
-          </ul>
+
+          <p className="mt-6 text-lg text-gray-600">
+            Get your meeting notes, YouTube recaps, and audio summaries{" "}
+            <span className="relative curved-underline">in just one click</span>.
+            <br /> Works seamlessly across all platforms.
+          </p>
+
+          <a
+            className="inline-flex mt-10 px-6 py-3 text-base font-medium text-white bg-black rounded-lg hover:bg-gray-800 transition"
+            href="/landing.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon name="download" />
+            &nbsp;Download Chrome Extension
+          </a>
         </div>
       </div>
+
+      {/* Integrations Section */}
+      <div className="py-20 bg-gray-50 font-inter">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Works with your favorite tools
+          </h2>
+          <p className="text-lg text-gray-600">
+            Seamlessly integrate with the platforms you already use
+          </p>
+        </div>
+
+        {/* Scrolling integrations */}
+        <div className="overflow-hidden">
+          <div className="integration-scroll flex flex-col space-y-6">
+            {/* Row 1 */}
+            <div className="flex space-x-6 animate-scroll-right whitespace-nowrap">
+              <IntegrationCard icon="🎥" name="Zoom" description="Auto-join and transcribe Zoom meetings" />
+              <IntegrationCard icon="📹" name="Google Meet" description="Seamless Google Meet integration" />
+              <IntegrationCard icon="💼" name="Microsoft Teams" description="Meeting notes in Teams" />
+              <IntegrationCard icon="📺" name="YouTube" description="Summarize YouTube instantly" />
+            </div>
+
+            {/* Row 2 */}
+            <div className="flex space-x-6 animate-scroll-left whitespace-nowrap">
+              <IntegrationCard icon="📅" name="Google Calendar" description="Schedule AI meeting agent automatically" />
+              <IntegrationCard icon="📝" name="Google Docs" description="Sync transcriptions for collaboration" />
+              <IntegrationCard icon="💬" name="Slack" description="Share transcripts instantly" />
+              <IntegrationCard icon="✅" name="Asana" description="Turn notes into tasks" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="sticky top-0 h-[80vh] flex items-center justify-between bg-white border-t border-gray-200 font-inter">
+        <div className="w-full sm:w-1/2 p-10">
+          <h1 className="text-3xl font-bold text-gray-900">
+            Never miss a thing with SmartSummary
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+            Transcribe interviews, podcasts, and meetings. <br />
+            Empower collaboration with easy sharing and search. <br />
+            Get AI-generated notes and highlights saved automatically.
+          </p>
+        </div>
+        <div className="w-full sm:w-1/2 flex items-center justify-center p-10">
+          <img src="M.png" alt="Feature" className="max-w-full max-h-full object-contain" />
+        </div>
+      </div>
+
+      <div className="sticky top-0 h-[80vh] flex items-center justify-between bg-white border-t border-gray-200 font-inter">
+        <div className="w-full sm:w-1/2 p-10">
+          <h1 className="text-3xl font-bold text-gray-900">
+            Never miss a thing with SmartSummary
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+            Transcribe interviews, podcasts, and meetings. <br />
+            Empower collaboration with easy sharing and search. <br />
+            Get AI-generated notes and highlights saved automatically.
+          </p>
+        </div>
+        <div className="w-full sm:w-1/2 flex items-center justify-center p-10">
+          <img src="M.png" alt="Feature" className="max-w-full max-h-full object-contain" />
+        </div>
+      </div>
+
+      <div className="sticky top-0 h-[80vh] flex items-center justify-between bg-white border-t border-gray-200 font-inter">
+        <div className="w-full sm:w-1/2 p-10">
+          <h1 className="text-3xl font-bold text-gray-900">
+            Never miss a thing with SmartSummary
+          </h1>
+          <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+            Transcribe interviews, podcasts, and meetings. <br />
+            Empower collaboration with easy sharing and search. <br />
+            Get AI-generated notes and highlights saved automatically.
+          </p>
+        </div>
+        <div className="w-full sm:w-1/2 flex items-center justify-center p-10">
+          <img src="M.png" alt="Feature" className="max-w-full max-h-full object-contain" />
+        </div>
+      </div>
+
       <Footer />
+
+      <style jsx>{`
+        .curved-underline {
+          position: relative;
+          display: inline-block;
+        }
+        .curved-underline::after {
+          content: '';
+          position: absolute;
+          left: -2%;
+          bottom: -2px;
+          width: 104%;
+          height: 6px;
+          background: black;
+          border-radius: 80px;
+          transform: scaleY(0.8) rotate(-0.9deg);
+          opacity: 0.9;
+        }
+        .animate-scroll-right {
+          animation: scrollRight 25s linear infinite;
+        }
+        .animate-scroll-left {
+          animation: scrollLeft 25s linear infinite;
+        }
+        @keyframes scrollRight {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        @keyframes scrollLeft {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+        .font-inter {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+            Roboto, Helvetica, Arial, sans-serif;
+        }
+      `}</style>
     </>
   );
 }
 
 export default Home;
-
