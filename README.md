@@ -6,8 +6,6 @@ The project is currently not in a working condition as the Azure credits have ex
 
 ## Turning Conversations into Actions
 
-
-
 Web conferencing and online meetings have become the new work culture nowadays. But somewhere along the lines, we often keep missing the crux of the discussions in these online meetings, and here comes our solution - **SmartSummary**. It is your easy to use online meeting assistant that backs you up with automated meeting minutes in every conversation. It will help you save time on board meetings, team management, and customer support such that you just focus on the conversation and never miss what’s important.
 
 StandNote also fits into the current online education scenario where most of the classes take place over online platforms like Google Meet and Zoom. We help students with quick and concise notes that help them to revise and memorize the concepts better.
@@ -31,8 +29,8 @@ StandNote also fits into the current online education scenario where most of the
 - **Machine Learning:** Python
 - **External APIs:** Speech to Text (Microsoft Azure)
 - **Code Editor and tools**: VS Code, Google Collab
-
-## Features:
+<details>
+ <summary><strong>Features</strong></summary>
 
 - [x] Remove the Distraction of Note-Taking
 - [x] Reduce Ineffective Meetings
@@ -46,55 +44,77 @@ StandNote also fits into the current online education scenario where most of the
 - [x] Manage & organize meeting notes as per teams.
 - [x] Directly push the MoM to the respective Slack Channels and Notions.
 - [x] Can be used with any Video conferencing app.
+</details>
 
 ## How to Use
+<details>
+   <summary><strong>Chrome Extension Setup Steps</strong></summary>
+
 On the Home Page you will find the download Chrome Extension button clicking on it will lead you to steps about how to get the extension
 
 
-- Setup the Extension 
+https://github.com/user-attachments/assets/8cda02da-258d-4d50-9f9a-eefb2688cfe7
 
-- After Installation, StandNote automatically opens up a new tab to ask for your microphone access. Grant it the access.
+<img width="1902" height="907" alt="ext" src="https://github.com/user-attachments/assets/094f4802-4dd1-49dd-a117-cfe6b057c7cc" />
 
-![permission](https://user-images.githubusercontent.com/42200276/102024275-1d035800-3db7-11eb-8a58-f0c801b6103b.PNG)
 
-- You are now all set to generate meeting notes using StandNote.
+- Setup the Extension by following the steps 
 
-![all set](https://user-images.githubusercontent.com/42200276/102024274-1b399480-3db7-11eb-9f5e-530aae666b7b.PNG)
+- After Installation, StandNote automatically opens up a new tab to ask for your microphone access. Grant it the access.<img width="488" height="272" alt="Screenshot 2025-09-26 154841" src="https://github.com/user-attachments/assets/e4079692-6433-4d32-a658-2a95880bc00a" />
+<img width="902" height="898" alt="Screenshot 2025-09-26 153844" src="https://github.com/user-attachments/assets/2fd5de36-a633-47e5-a135-14f6d383f0a6" />
+
+<img width="116" height="550" alt="Screenshot 2025-09-26 155042" src="https://github.com/user-attachments/assets/74543c82-bbb0-4779-87c5-8dfc031c34bc" />
+
+<img width="818" height="438" alt="Screenshot 2025-09-26 155157" src="https://github.com/user-attachments/assets/b41fdd24-994c-4678-8418-0d74cefc4e06" />
+
+<img width="934" height="240" alt="Screenshot 2025-09-26 154918" src="https://github.com/user-attachments/assets/e3da8bcb-aaaf-473e-827f-b75b808ccd03" />
+
+
 
 - 📌 Pin the Extension for easy usage.
-- Now, click on the extension it will ask you to login via Email or your Google Account. Login using any of them or click on `Create Now` if you don't have an account.
+</details>
 
-![Screenshot from 2020-12-11 00-09-54](https://user-images.githubusercontent.com/42200276/102024388-bfbbd680-3db7-11eb-93a5-9285aae153e1.png)
+<details>
+   <summary><strong>Transcription & Summarization</strong></summary>
 
-- After login it will show you another screen that ask you to `Generate Meeting Notes`. Click on this button during a meeting to automatically generate meeting notes for this meeting.
+On the Home Page you will find the download Chrome Extension button clicking on it will lead you to steps about how to get the extension
 
-![image](https://user-images.githubusercontent.com/42200276/102024564-c434bf00-3db8-11eb-8b45-414f04b5e4d4.png)
 
-- You should now see a 3s countdown and after that you will have a minimalist tab to help you to the needful.
+https://github.com/user-attachments/assets/8cda02da-258d-4d50-9f9a-eefb2688cfe7
 
-![image](https://user-images.githubusercontent.com/42200276/102024608-1bd32a80-3db9-11eb-83c6-0aeb44dfb206.png)
+<img width="1902" height="907" alt="ext" src="https://github.com/user-attachments/assets/094f4802-4dd1-49dd-a117-cfe6b057c7cc" />
 
-- You can also see the time of the meeting. The play pause button helps you to stop converting your audio to text. You can always resume it. thus eliminating the chances of converting any confidential message to text, hence removing the possibility of having them in the meeting notes generated. This is done to maintain the rapport of confidence.
-- You can also mute yourself while others can continue with the meeting.
-- The tick button will end the processing of the meeting's speech and take you to the section where you can see your meeting notes converted to text.
 
-<img align="center" src="https://user-images.githubusercontent.com/42200276/102024736-d19e7900-3db9-11eb-8c87-924b236abf19.png" height="300" />
+- Setup the Extension by following the steps 
 
-- You can edit the meeting's text and make it more clear, after that click on the `Generate Notes for the Meeting` button to submit the meeting's details. You should then see a page similar to this.
+- After Installation, StandNote automatically opens up a new tab to ask for your microphone access. Grant it the access.<img width="488" height="272" alt="Screenshot 2025-09-26 154841" src="https://github.com/user-attachments/assets/e4079692-6433-4d32-a658-2a95880bc00a" />
+<img width="902" height="898" alt="Screenshot 2025-09-26 153844" src="https://github.com/user-attachments/assets/2fd5de36-a633-47e5-a135-14f6d383f0a6" />
 
-![image](https://user-images.githubusercontent.com/42200276/102024849-61442780-3dba-11eb-8da5-e549b71f762a.png)
+<img width="116" height="550" alt="Screenshot 2025-09-26 155042" src="https://github.com/user-attachments/assets/74543c82-bbb0-4779-87c5-8dfc031c34bc" />
 
-- You can now sit back and relax, once the meeting's notes are ready we will notify you via Email.
-- You are all set now. Our ML algorithms will do their job and will give you the generated minutes of the meeting.
-- After receiving the email, visit your dashboard at https://standnote.netlify.app/dashboard to view your meeting notes. It should look similar to this:
+<img width="818" height="438" alt="Screenshot 2025-09-26 155157" src="https://github.com/user-attachments/assets/b41fdd24-994c-4678-8418-0d74cefc4e06" />
 
-![image](https://user-images.githubusercontent.com/42200276/102024921-c861dc00-3dba-11eb-9dbe-91215a0220c4.png)
+<img width="934" height="240" alt="Screenshot 2025-09-26 154918" src="https://github.com/user-attachments/assets/e3da8bcb-aaaf-473e-827f-b75b808ccd03" />
 
-- Choose your meeting from the list of meetings and you will get the notes for that meeting.
 
-![image](https://user-images.githubusercontent.com/42200276/102024950-e596aa80-3dba-11eb-9e1a-f931ddac3ac7.png)
 
-- This page contains many options to edit, delete, save and view the full text of the meeting.
+- 📌 Pin the Extension for easy usage.
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 That's it, you now know how to use **SmartSummary** on any online and offline meetings.
